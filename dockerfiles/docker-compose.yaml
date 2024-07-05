@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      - POSTGRES_USER=dbuser
+      - POSTGRES_PASSWORD=pw
+      - POSTGRES_DB=todos
+    ports:
+      - 8080:5432
+    volumes: 
+      - ./db:/var/lib/postgresql/data
+volumes:
+  db:
+    driver: local
