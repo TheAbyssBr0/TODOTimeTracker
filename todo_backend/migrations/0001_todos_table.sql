@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS supertasks (
+    id SERIAL PRIMARY KEY,
+    title TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS tasks (
+    id SERIAL PRIMARY KEY,
+    title TEXT NOT NULL,
+    supertask_id INTEGER NOT NULL,
+    checked BOOLEAN NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS ongoing (
+    id SERIAL PRIMARY KEY,
+    task_id INTEGER NOT NULL,
+    start_time TIMESTAMPTZ NOT NULL,
+    end_time TIMESTAMPTZ
+);
