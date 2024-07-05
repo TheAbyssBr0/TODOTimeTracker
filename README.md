@@ -1,9 +1,17 @@
 # TODOTimeTracker
-A to-do list and tracker for time spent per task
+A to-do list and tracker for time spent per task. With a lightweight backend RESTful server written completely in Rust and frontend with vanilla JS and WASM.
 
-This will be a remake of an older project: [Project Jasmine](https://github.com/TheAbyssBr0/ProjectJasmine)
+## Progress:
+- [x] PostgreSQL database running in a docker container
+- [x] RESTful backend server in rust
+- [ ] frontend with vanilla JS, HTML, CSS, and WASM for logic
 
-It was written in Python with Flask for the REST server and ncurses for the frontend which isn't the best for running on Windows machines.
+## Future plans:
+- [ ] move full backend to alpine-based docker containers for efficiency; a nice to have but not a necessity 
 
-The remake is planned feature a vanilla JS frontend running in a web browser. The backend will still be a RESTful http server but it will be written in
-Java using the Spring framework running in a docker container.
+## How to run a demo of the backend:
+ 1. use docker compose to run the file in dockerfiles directory (pulls down files for a postgres 16 release tag docker container)
+ 2. use `cargo run --release` to compile and run (requires cargo)
+ 3. use `curl` to test out the api (docs currently unavailable. Check source code for endpoint addresses)
+
+This will be a remake of an older project (a full functioning project): [Project Jasmine](https://github.com/TheAbyssBr0/ProjectJasmine)
